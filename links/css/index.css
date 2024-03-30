@@ -1,0 +1,207 @@
+:root {
+   --font-color: #ffffff90;
+   --bg-color: #2b2e33; 
+   --shadow1: #000000; 
+   --shadow2: #565c66;
+   --linkfontsize: 26px;
+   --resp-linkfontsize: 22px;
+   
+}
+
+body {
+   background-color: var(--bg-color);
+   font-family: Delius;
+   text-align: center;
+   color: var(--font-color);
+   display: flex;
+   justify-content: center;
+}
+
+::selection {
+   background-color: #4a4949;
+   color: #fff;
+}
+
+.main {
+   width: 60%;
+   height: auto;
+   background-color: var(--bg-color);
+   padding: 20px;
+   margin: auto;
+   border-radius: 20px;
+   box-shadow: 3px 3px 7px var(--shadow1), -3px -3px 7px var(--shadow2);
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
+
+.userinfo {
+   width: 70%;
+   height: auto;
+   background-color: var(--bg-color);
+   padding: 20px;
+   margin: auto;
+   border-radius: 20px;
+   box-shadow: inset 2px 2px 5px var(--shadow2), inset -2px -2px 5px var(--shadow1);
+   margin-top: 20px;
+}
+
+.userinfo h2 {
+   text-align: center;
+   color: var(--font-color);
+   font-size: 20px;
+}
+
+.userinfo p {
+   color: var(--font-color);
+   font-size: 15px;
+}
+
+.avatar-circle {
+   width: 125px;
+   height: 125px;
+   border-radius: 50%;
+   margin: auto;
+   box-shadow: inset 2px 2px 7px #000000ab, inset -2px -2px 7px #ffffff26;
+   margin-top: 3px;
+   margin-bottom: 20px;
+}
+
+.avatar {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   box-shadow: inset 2px 2px 7px var(--shadow2), inset -2px -2px 7px var(--shadow1);
+   display: block;
+   margin: 13px;
+   z-index: 1;
+   position: absolute;
+}
+
+.avatar img {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   display: block;
+   margin: auto;
+   opacity: 0.8
+}
+
+.led-section {
+   width: 100%;
+   margin-top: 15px;
+   justify-content: center;
+   display: flex;
+}
+
+.led {
+   width: 5px;
+   height: 5px;
+   border-radius: 50%;
+   display: inline-block;
+   margin-left: 5px;
+   margin-right: 5px;
+   background: linear-gradient(to right bottom, lime 0%, #04b704 100%);
+   /*box-shadow: 1px 1px 2px #000, -1px -1px 2px #3a3a3a;*/
+}
+
+.social-icon-card {
+   padding: 15px;
+   text-align: center;
+}
+
+.social-icons {
+   color: var(--font-color);
+   background-color: var(--bg-color);
+   font-size: 22px;
+   padding: 5px;
+   box-shadow: inset 1px 1px 3px var(--shadow2), inset -1px -1px 3px var(--shadow1);
+   border-radius: 50%;
+   margin-right: 12px;
+   margin-left: 12px;
+}
+
+.social-icons:hover {
+   color: #fff;
+}
+
+.social-icons:active {
+   box-shadow: inset 1px 1px 3px var(--shadow1), inset -1px -1px 3px var(--shadow2);
+   color: #fff;
+}
+
+.linksection {
+   width: 80%;
+   padding: 15px;
+   margin: auto;
+   margin-top: 30px;
+}
+
+.linkbox {
+   padding: 20px;
+   background-color: var(--bg-color);
+   border-radius: 50px;
+   color: var(--font-color);
+   text-decoration: none;
+   display: block;
+   margin-top: 25px;
+   text-align: center;
+   box-shadow: inset 2px 2px 5px var(--shadow2), inset -2px -2px 5px var(--shadow1);   
+}
+
+.linkicon {
+   font-size: 26px;
+   color: var(--font-color);
+   float: left;
+   margin-top: -3px;
+   padding-left: 25px;
+   position: absolute;
+   left: 27%;
+}
+
+.linkbox:hover {
+   color: #fff;   
+}
+
+.linkbox:hover .linkicon {
+   color: #fff;
+}
+
+.linkbox:active {
+   box-shadow: 1px 1px 3px var(--shadow1), -1px -1px 3px var(--shadow2),inset 2px 2px 5px var(--shadow1), inset -2px -2px 5px var(--shadow2); 
+   color: #fff;
+}
+
+.linkbox:active .linkicon {
+   color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+   .main {
+      width: 83%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      box-shadow: 5px 5px 10px var(--shadow1), -5px -5px 10px var(--shadow2);
+   }
+   
+   .userinfo {
+      width: 75%;
+   }
+
+   .userinfo p {
+      font-size: 14px;
+   }
+   
+   .linksection {
+      width: 85%;
+   }
+   
+   .linkbox {
+      padding: 15px;
+   }
+   
+   .linkicon {
+      font-size: 22px;
+      left: 15%;
+      margin-top: 0px;
+   }
+}
