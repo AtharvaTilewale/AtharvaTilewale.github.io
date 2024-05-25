@@ -2401,11 +2401,73 @@ img.profile-img-item {
 .utf-service-featured-box {
     box-sizing: border-box;
     position: relative;
-    background: #f2f2f2;
+    background: #fff;
     padding: 40px 20px;
     border-radius: 10px;
     text-align: center;
     margin-bottom: 30px;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease
+}
+
+.utf-service-featured-intro-box {
+    box-sizing: border-box;
+    position: relative;
+    background: #f2f2f2;
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease
+}
+
+.utf-service-featured-feature-box {
+    box-sizing: border-box;
+    position: relative;
+    background: #f2f2f2;
+    padding: 20px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease    
+}
+
+@media(max-width: 765px){
+    .utf-service-featured-feature-box{
+        margin-top: -40px;
+        padding: 0px 20px;
+    }
+}
+
+.utf-service-featured-intro-box h4 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.utf-service-featured-intro-box h5 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.utf-service-featured-intro-box h6 {
+    line-height: 1.5;
+}
+
+.utf-service-featured-code-box {
+    box-sizing: border-box;
+    position: relative;
+    background: #f2f2f2;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #426eff;
+    text-align: left;
+    margin-bottom: 25px;
+    margin-top: 25px;
     -webkit-transition: all 0.6s ease;
     transition: all 0.6s ease
 }
@@ -4846,7 +4908,7 @@ svg:not(:root) {
     }
 }
 
-section#services {
+section#services, section#contact {
     background: #2c3045 !important;
 }
 
@@ -4858,4 +4920,17 @@ section#services {
     font-weight: 400;
     font-size: 15px;
     color: #0b397a;;
+}
+
+.construction-img {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+@media(max-width: 500px){
+    .construction-img img{
+        width: 90%;
+        margin-bottom: 45%;
+    }
 }
