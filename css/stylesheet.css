@@ -4908,7 +4908,7 @@ svg:not(:root) {
     }
 }
 
-section#services, section#contact {
+section#download, section#contact{
     background: #2c3045 !important;
 }
 
