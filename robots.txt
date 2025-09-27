@@ -1,0 +1,19 @@
+# Allow all search engines to crawl main pages
+User-agent: *
+Allow: /
+
+# Disallow any draft or temporary folders (if any)
+Disallow: /drafts/
+Disallow: /tmp/
+Disallow: /private/
+
+# Sitemap location (important for faster indexing)
+Sitemap: https://atharvatilewale.github.io/sitemap.xml
+
+# Crawl-delay (optional: set if you want to reduce server load)
+# Crawl-delay: 10
+
+# Notes:
+# - 'Allow: /' ensures all your main project pages are crawlable
+# - 'Disallow' blocks pages/folders you don't want indexed
+# - Sitemap helps search engines discover pages faster
