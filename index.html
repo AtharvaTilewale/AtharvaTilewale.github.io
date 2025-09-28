@@ -69,12 +69,6 @@
             padding: 5rem 1rem;
         }
 
-        @media (max-width: 768px) {
-            .section {
-                padding: 3.5rem 1rem;
-            }
-        }
-
         .section-title {
             font-weight: 700;
             color: var(--heading-color);
@@ -120,13 +114,6 @@
             font-family: 'Source Code Pro', monospace;
             border: 1px solid var(--primary-color);
             margin-top: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .status-badge {
-                padding: 0.5rem 1rem;
-                font-size: 0.7rem;
-            }
         }
 
         /* My Approach Section */
@@ -388,6 +375,76 @@
             margin: 0;
         }
 
+        .site-footer .text-muted-custom {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVE IMPROVEMENT: Media queries for smaller devices === */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3.5rem 1rem;
+            }
+            .card-text {
+                font-size: 0.95rem; /* Slightly smaller text on smaller screens */
+            }
+            .btn-custom {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            .project-card .card-body {
+                padding: 1.5rem;
+            }
+            .site-footer .social-links a {
+                margin: 0 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+            }
+            .hero .highlight {
+                font-size: clamp(1.7rem, 6vw, 3rem);
+            }
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            .status-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            .card-text {
+                font-size: 0.9rem; /* Slightly smaller text on very small screens */
+            }
+            .status-tag {
+                top: 0.8rem;
+                right: 1rem;
+                padding: 0.25rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            .btn-custom {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            .credential-text h3 {
+                font-size: 1rem; /* Slightly smaller on very small screens */
+            }
+            .credential-text p {
+                font-size: 0.85rem; /* Slightly smaller on very small screens */
+            }
+            .site-footer h3 {
+                font-size: 1.3rem;
+            }
+            .site-footer p {
+                font-size: 0.9rem;
+            }
+            .site-footer .text-muted-custom {
+                font-size: 0.8rem;
+            }
+        }
+
         ::selection {
             background-color: var(--primary-color);
             color: var(--dark-bg);
@@ -536,7 +593,7 @@
                 <!-- <a href="https://atharvatilewale.github.io/links" target="_blank" rel="noopener noreferrer"
                     aria-label="View All Links"><i class="fas fa-link"></i></a> -->
             </div>
-            <p class="text-muted mt-3">&copy; 2025 Atharva Tilewale. All Rights Reserved.</p>
+            <p class="text-muted-custom mt-3">&copy; 2025 Atharva Tilewale. All Rights Reserved.</p>
         </div>
     </footer>
 
