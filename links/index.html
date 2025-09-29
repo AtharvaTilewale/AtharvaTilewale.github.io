@@ -1,53 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Atharva Vijay Tilewale (atharva_16at)">
+    <title>Atharva Tilewale | Links</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find all my professional, academic, and social links in one place. Connect with Atharva Tilewale on LinkedIn, GitHub, ResearchGate, and more.">
+    <meta name="keywords" content="atharva tilewale, links, contact, portfolio, bioinformatician, computational biology, linkedin, github, researchgate, orcid, google scholar">
+    <meta name="author" content="Atharva Tilewale">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://atharvatilewale.github.io/links.html" />
 
-<title>Links | Atharva Tilewale</title>
+    <meta property="og:title" content="Atharva Tilewale | Links">
+    <meta property="og:description" content="All my professional and academic profiles in one place. Let's connect!">
+    <meta property="og:url" content="https://atharvatilewale.github.io/links.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atharva Tilewale | Links">
+    <meta name="twitter:description" content="All my professional and academic profiles in one place. Let's connect!">
 
-<link rel="stylesheet" href="css/index.css" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Delius' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://kit.fontawesome.com/caefa2e24e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #00f5c3;
+            --dark-bg: #121828;
+            --light-bg: #1a2238;
+            --text-color: #d0d2d6;
+            --heading-color: #ffffff;
+            --border-color: #2a3457;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section {
+            padding: 5rem 1rem;
+        }
+
+        /* Profile Header specific to this links page */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 3rem;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 25px rgba(0, 245, 195, 0.2);
+        }
+        
+        .profile-header h1 {
+            color: var(--heading-color);
+            font-weight: 600;
+            font-size: 2rem;
+        }
+        
+        .profile-header p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Links Section Styling (Re-using .credential styles from your page) */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 650px; /* Wider for a link-tree style */
+        }
+        
+        .link-card:hover {
+            transform: scale(1.03);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 245, 195, 0.15);
+        }
+
+        .link-icon {
+            flex-shrink: 0;
+            width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-icon i {
+            font-size: 1.75rem;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .link-card:hover .link-icon i {
+            color: var(--primary-color);
+        }
+
+        .link-text {
+            margin-left: 1.25rem;
+            text-align: left;
+        }
+
+        .link-text h3 {
+            color: var(--heading-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .link-card:hover .link-text h3 {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .site-footer {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 5rem;
+        }
+
+        .site-footer .text-muted-custom {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+            .profile-header {
+                padding-top: 2rem;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
 </head>
-<body>
-<div class="main">
 
-   <div class="userinfo">
-      <div class="avatar-circle">
-         <div class="avatar">
-         </div>
-      </div>
-      
-      <div class="led-section">
-         <div class="led"></div>
-         <div class="led"></div>
-         <div class="led"></div>
-      </div>
-      
-      <h2>Atharva Tilewale</h2>
-      <p>Biotech Student | Frontend Developer | Scientific Writer</p>
-            
-      <div class="social-icon-card">
-         <a href="https://thecoolscience.github.io" target="_blank"><i class="fas fa-globe social-icons"></i></a>
-         <a href="https://github.com/Atharva-TheCoder" target="_blank"><i class="fab fa-github social-icons"></i></a>
-         <a href="mailto:tilewale.atharva@gmail.com" target="_blank"><i class="far fa-envelope social-icons"></i></a>
-      </div>
-   </div>
-  
-   <div class="linksection">
-      <a href="https://thecoolscience.github.io" class="linkbox" target="_blank">Website<i class="fas fa-globe linkicon"></i></a>
-      <a href="https://www.linkedin.com/in/atharvatilewale" class="linkbox" target="_blank">LinkedIn<i class="fab fa-linkedin linkicon"></i></a>
-      <a href="https://github.com/AtharvaTilewale" class="linkbox" target="_blank">Github<i class="fab fa-github linkicon"></i></a>
-      <a href="https://www.shutterstock.com/g/atharva+tilewale" class="linkbox" target="_blank">Shutterstock<i class="fas fa-images linkicon"></i></a>
-      <a href="https://stackoverflow.com/users/14571973/atharva-thecoder" class="linkbox" target="_blank">Stack Overflow<i class="fab fa-stack-overflow linkicon"></i></a>
-      <a href="https://instagram.com/atharva.tilewale" class="linkbox" target="_blank">Instagram<i class="fab fa-instagram linkicon"></i></a>
-      <!--<a href="" class="linkbox" target="_blank">Facebook<i class="fab fa-facebook-f linkicon"></i></a>
-      <a href="https://atharva-thecoder.github.io/links-template" class="linkbox" target="_blank">Links Template<i class="far fa-file-alt linkicon"></i></a>
-      <a href="https://t.me/atharva_16at" class="linkbox" target="_blank">Telegram<i class="fab fa-telegram-plane linkicon"></i></a>-->
-  </div>
-   
-</div>
+<body>
+
+    <main>
+        <div class="container">
+            <header class="profile-header">
+                <!-- <img src="images/profile-pic.jpg" alt="Atharva Tilewale" class="profile-pic"> -->
+                <h1>Atharva Tilewale</h1>
+                <p>Bioinformatician & Computational Biologist</p>
+            </header>
+
+            <section id="links">
+                <div class="links-container">
+
+                    <a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <div class="link-icon"><i class="fab fa-linkedin"></i></div>
+                        <div class="link-text"><h3>LinkedIn</h3></div>
+                    </a>
+
+                    <a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <div class="link-icon"><i class="fab fa-github"></i></div>
+                        <div class="link-text"><h3>GitHub</h3></div>
+                    </a>
+
+                    <a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <div class="link-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="link-text"><h3>Google Scholar</h3></div>
+                    </a>
+                    
+                    <a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <div class="link-icon"><i class="fab fa-researchgate"></i></div>
+                        <div class="link-text"><h3>ResearchGate</h3></div>
+                    </a>
+
+                    <a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
+                        <div class="link-icon"><i class="fab fa-orcid"></i></div>
+                        <div class="link-text"><h3>ORCID</h3></div>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="link-card">
+                        <div class="link-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="link-text"><h3>Email</h3></div>
+                    </a>
+
+                    <a href="#" class="link-card" target="_blank">
+                        <div class="link-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="link-text"><h3>Download CV</h3></div>
+                    </a>
+                    
+                    <a href="https://atharvatilewale.github.io/" class="link-card">
+                        <div class="link-icon"><i class="fas fa-globe"></i></div>
+                        <div class="link-text"><h3>Portfolio Website</h3></div>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p class="text-muted-custom mt-3">&copy; 2025 Atharva Tilewale. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

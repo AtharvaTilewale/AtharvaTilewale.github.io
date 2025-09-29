@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Atharva Tilewale | Terminal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive terminal to access all of Atharva Tilewale's professional and academic links. Connect on LinkedIn, GitHub, and more.">
+    <meta name="author" content="Atharva Tilewale">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://atharvatilewale.github.io/links.html" />
+
+    <meta property="og:title" content="Atharva Tilewale | Interactive Terminal">
+    <meta property="og:description" content="Access my digital footprint through this creative command-line interface.">
+    <meta property="og:url" content="https://atharvatilewale.github.io/links.html">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00f5c3;
+            --dark-bg: #121828;
+            --light-bg: #1a2238;
+            --text-color: #d0d2d6;
+            --heading-color: #ffffff;
+            --border-color: #2a3457;
+            --font-mono: 'Source Code Pro', monospace;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        ::selection {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            text-shadow: none;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .terminal-window {
+            width: 100%;
+            max-width: 800px;
+            height: 90vh;
+            max-height: 700px;
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background-color: var(--border-color);
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .header-buttons .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+
+        .header-title {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+        }
+
+        .terminal-body {
+            flex-grow: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar styling */
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        .terminal-body::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+        .terminal-body::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            border: 2px solid var(--light-bg);
+        }
+
+        .terminal-output a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--primary-color);
+            transition: all 0.2s ease;
+        }
+        .terminal-output a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border-bottom-style: solid;
+        }
+
+        .prompt-line {
+            display: flex;
+        }
+        
+        .prompt-symbol {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        #userInput {
+            background: none;
+            border: none;
+            color: var(--heading-color);
+            font-family: var(--font-mono);
+            flex-grow: 1;
+        }
+        #userInput:focus {
+            outline: none;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: var(--heading-color);
+            width: 10px;
+            height: 1.2em;
+            animation: blink 1s step-end infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: var(--heading-color); }
+        }
+
+        .output-command {
+            color: var(--primary-color);
+        }
+        .output-error {
+            color: #ff5f56;
+        }
+        .output-info {
+            color: #ffbd2e;
+        }
+        .output-table {
+            display: grid;
+            grid-template-columns: 120px auto;
+            gap: 0.5rem 1rem;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.8rem;
+                padding: 1rem;
+                
+            }
+            .terminal-body {
+                padding: 1rem;
+            }
+
+            .output-table {
+                display: grid; /* Switch from grid to block layout */
+            }
+
+            .output-table span {
+                display: block; /* Make each part of the table a new line */
+            }
+
+            /* Style for the description text in the stacked table view */
+            .output-table span:nth-child(2n) {
+                padding-left: 1rem; /* Indent the description */
+                margin-bottom: 0.75rem; /* Add space between entries */
+                opacity: 0.8;
+            }
+
+            .header-title {
+                display: none; /* Hide the title on very small screens to save space */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="header-buttons">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="header-title">bash -- atharva-tilewale</div>
+            <div style="width: 55px;"></div> </div>
+        <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output" id="terminalOutput"></div>
+            <div class="prompt-line">
+                <span class="prompt-symbol">&gt;</span>
+                <div id="userInput" contenteditable="true" spellcheck="false"></div>
+                <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const terminalOutput = document.getElementById('terminalOutput');
+        const userInput = document.getElementById('userInput');
+        const terminalBody = document.getElementById('terminalBody');
+        
+        // ---------- UPDATE YOUR LINKS HERE ----------
+        const links = {
+            "linkedin": "https://www.linkedin.com/in/atharvatilewale/",
+            "github": "https://github.com/AtharvaTilewale",
+            "scholar": "https://scholar.google.com/citations?user=YOUR_ID", // Replace with your Google Scholar URL
+            "researchgate": "https://www.researchgate.net/profile/Atharva-Tilewale-2",
+            "orcid": "https://orcid.org/0009-0003-9802-8158",
+            "email": "mailto:your.email@example.com", // Replace with your email
+            "cv": "#", // Replace with the link to your CV PDF
+            "portfolio": "https://atharvatilewale.github.io/"
+        };
+        // ------------------------------------------
+
+        const commands = {
+            whoami: `
+                <span class="output-info">Atharva Tilewale</span><br>
+                Bioinformatician & Computational Biologist<br>
+                Specializing in genomics, software development, and data visualization.<br>
+                Currently decoding biology, one line of code at a time.
+            `,
+            help: `
+                <div class="output-table">
+                    <span><span class="output-command">whoami</span></span>      <span>Prints my bio.</span>
+                    <span><span class="output-command">ls -social</span></span>  <span>Lists social & professional profiles.</span>
+                    <span><span class="output-command">ls -research</span></span><span>Lists academic & research profiles.</span>
+                    <span><span class="output-command">contact</span></span>     <span>Displays contact information.</span>
+                    <span><span class="output-command">open &lt;name&gt;</span></span> <span>Opens a link (e.g., 'open linkedin').</span>
+                    <span><span class="output-command">clear</span></span>       <span>Clears the terminal screen.</span>
+                    <span><span class="output-command">help</span></span>        <span>Shows this help message.</span>
+                    <span><span class="output-command">matrix</span></span>      <span>???</span>
+                    <span><span class="output-command">exit</span></span>      <span>Disconnect from the server.</span>
+                </div>
+            `,
+            'ls -social': `
+                <div class="output-table">
+                    <span>LinkedIn</span>   <span><a href="${links.linkedin}" target="_blank">linkedin.com/in/atharvatilewale</a></span>
+                    <span>GitHub</span>     <span><a href="${links.github}" target="_blank">github.com/AtharvaTilewale</a></span>
+                    <span>Portfolio</span>  <span><a href="${links.portfolio}" target="_blank">atharvatilewale.github.io</a></span>
+                </div>
+            `,
+            'ls -research': `
+                <div class="output-table">
+                    <span>G. Scholar</span> <span><a href="${links.scholar}" target="_blank">Google Scholar Profile</a></span>
+                    <span>ResearchGate</span><span><a href="${links.researchgate}" target="_blank">ResearchGate Profile</a></span>
+                    <span>ORCID</span>      <span><a href="${links.orcid}" target="_blank">ORCID Profile</a></span>
+                </div>
+            `,
+            contact: `
+                <div class="output-table">
+                    <span>Email</span>      <span><a href="${links.email}">your.email@example.com</a></span>
+                    <span>CV</span>         <span><a href="${links.cv}" target="_blank">Download Résumé (PDF)</a></span>
+                </div>
+            `,
+            exit: `
+                <span class="output-info">Disconnecting from Atharva's Digital Footprint...</span><br>
+                <span class="output-info">Connection closed. Goodbye!</span>
+                
+            `
+        };
+
+        const initialMessage = [
+            "Initializing connection to Atharva's Digital Footprint...",
+            "Connection established.",
+            "Welcome, user. Type <span class='output-command'>'help'</span> to see available commands."
+        ];
+        
+        function typeMessage(message, index = 0) {
+            if (index < message.length) {
+                printOutput(message[index]);
+                setTimeout(() => typeMessage(message, index + 1), 300);
+            } else {
+                userInput.focus();
+            }
+        }
+
+        function printOutput(html) {
+            terminalOutput.innerHTML += `<div>${html}</div>`;
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+        
+        function printCommand(command) {
+            const prompt = `<div class="prompt-line"><span class="prompt-symbol">&gt;</span><div>${command}</div></div>`;
+            terminalOutput.innerHTML += prompt;
+        }
+
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const command = userInput.innerText.trim().toLowerCase();
+                if (command) {
+                    printCommand(command);
+                    executeCommand(command);
+                    userInput.innerText = '';
+                }
+            }
+        });
+
+        function executeCommand(command) {
+            if (commands[command]) {
+                printOutput(commands[command]);
+                if (command === 'exit') {
+                    // Disable any further typing
+                    userInput.contentEditable = false;
+                    // Hide the prompt line completely for a clean exit
+                    document.querySelector('.prompt-line').style.display = 'none';
+
+                    // Wait 3 seconds, then redirect to the portfolio homepage
+                    setTimeout(() => {
+                        window.location.href = links.portfolio; 
+                    }, 1500); // 3000 milliseconds = 3 seconds
+                }
+            } else if (command.startsWith('open ')) {
+                const linkName = command.substring(5);
+                if (links[linkName]) {
+                    printOutput(`Opening ${linkName}...`);
+                    window.open(links[linkName], '_blank');
+                } else {
+                    printOutput(`<span class="output-error">Error: Link '${linkName}' not found.</span>`);
+                }
+            } else if (command === 'clear') {
+                terminalOutput.innerHTML = '';
+            } else if (command === 'matrix') {
+                printOutput(`Wake up, Neo...`);
+            } else {
+                printOutput(`<span class="output-error">Error: Command '${command}' not found. Type 'help' for a list of commands.</span>`);
+            }
+        }
+        
+        // On page load
+        document.addEventListener('DOMContentLoaded', () => {
+            typeMessage(initialMessage);
+        });
+
+        // Focus on input when clicking anywhere in the terminal
+        terminalBody.addEventListener('click', () => {
+            userInput.focus();
+        });
+
+    </script>
+</body>
+</html>
