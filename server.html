@@ -176,14 +176,13 @@
         /* --- Responsive Adjustments --- */
         @media (max-width: 600px) {
             body {
-                font-size: 0.8rem;
                 padding: 1rem;
             }
             .terminal-window {
                 width: 90%;
-                height: 75%;
+                height: 70%;
                 margin-top: auto;
-                margin-bottom: 10%;
+                margin-bottom: 15%;
                 box-shadow: none;
                 position: fixed;
                 font-size: 0.8rem;
@@ -208,7 +207,8 @@
             }
 
             .header-title {
-                font-size: 0.7rem; /* Hide the title on very small screens to save space */
+                font-size: 0.7rem;
+                margin-left: 0.5rem;
             }
         }
     </style>
@@ -221,7 +221,7 @@
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
             </div>
-            <div class="header-title">bash -- atharva-tilewale</div>
+            <div class="header-title">ssh | atharva@127.0.0.1:45001</div>
             <div style="width: 55px;"></div> </div>
         <div class="terminal-body" id="terminalBody">
             <div class="terminal-output" id="terminalOutput"></div>
@@ -299,6 +299,7 @@
         };
 
         const initialMessage = [
+            "<span class='prompt-symbol'>&gt;</span>ssh -i ~/.ssh/id_rsa -p 45001 atharva@127.0.0.1",
             "Initializing connection to Atharva's Digital Footprint...",
             "Connection established.",
             "Welcome, user. Type <span class='output-command'>'help'</span> to see available commands."
@@ -307,7 +308,7 @@
         function typeMessage(message, index = 0) {
             if (index < message.length) {
                 printOutput(message[index]);
-                setTimeout(() => typeMessage(message, index + 1), 700);
+                setTimeout(() => typeMessage(message, index + 1), 1500);
             } else {
                 userInput.focus();
             }
