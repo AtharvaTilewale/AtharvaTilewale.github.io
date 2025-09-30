@@ -125,7 +125,7 @@
         }
 
         .prompt-line {
-            display: flex;
+            display: none;
         }
         
         .prompt-symbol {
@@ -310,6 +310,7 @@
                 printOutput(message[index]);
                 setTimeout(() => typeMessage(message, index + 1), 1500);
             } else {
+                document.querySelector('.prompt-line').style.display = 'flex';
                 userInput.focus();
             }
         }
