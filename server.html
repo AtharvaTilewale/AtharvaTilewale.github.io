@@ -305,7 +305,7 @@
         function typeMessage(message, index = 0) {
             if (index < message.length) {
                 printOutput(message[index]);
-                setTimeout(() => typeMessage(message, index + 1), 300);
+                setTimeout(() => typeMessage(message, index + 1), 700);
             } else {
                 userInput.focus();
             }
