@@ -338,7 +338,7 @@
         };
 
         const initialMessage = [
-            "<span class='prompt-symbol'>&gt;</span>ssh -i ~/.ssh/id_rsa -p 45001 atharva@127.0.0.1",
+            "<span class='prompt-symbol'>&gt; ssh -i ~/.ssh/id_rsa -p 45001 atharva@127.0.0.1</span>",
             "Initializing connection to Atharva's Digital Footprint...",
             "Connection established.",
             "Welcome, user. Type <span class='output-command'>'help'</span> to see available commands."
@@ -360,8 +360,8 @@
         }
         
         function printCommand(command) {
-            const prompt = `<div class="prompt-line"><span class="prompt-symbol">&gt;</span><div>${command}</div></div>`;
-            terminalOutput.innerHTML += prompt;
+            terminalOutput.innerHTML += `<div class="output-command">&gt; ${command}</div>`;
+            terminalBody.scrollTop = terminalBody.scrollHeight;
         }
 
         userInput.addEventListener('keydown', (e) => {
