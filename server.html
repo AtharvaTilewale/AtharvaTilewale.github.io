@@ -178,7 +178,13 @@
             body {
                 font-size: 0.8rem;
                 padding: 1rem;
-                
+            }
+            .terminal-window {
+                width: 90%;
+                height: 75%;
+                box-shadow: none;
+                position: fixed;
+                font-size: 0.8rem;
             }
             .terminal-body {
                 padding: 1rem;
@@ -246,9 +252,9 @@
         const commands = {
             whoami: `
                 <span class="output-info">Atharva Tilewale</span><br>
-                Biotechnologist, Bioinformatician & Computational Biologist<br>
-                Specializing in structural biology, protein engineering, drug discovery, and software development.<br>
-                Currently decoding biology, one line of code at a time.
+                <span class="output-command">⤷</span> Biotechnologist, Bioinformatician & Computational Biologist<br>
+                <span class="output-command">⤷</span> Specializing in structural biology, protein engineering, drug discovery, and software development.<br>
+                <span class="output-command">⤷</span> Currently decoding biology, one line of code at a time.
             `,
             help: `
                 <div class="output-table">
