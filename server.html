@@ -174,7 +174,46 @@
         }
 
         /* --- Responsive Adjustments --- */
-        @media (max-width: 600px) {
+        @media (max-width: 1000px) {
+            body {
+                padding: 1rem;
+            }
+            .terminal-window {
+                width: 90%;
+                height: 80%;
+                margin-top: auto;
+                margin-bottom: 5%;
+                box-shadow: none;
+                position: fixed;
+                font-size: 0.8rem;
+            }
+            .terminal-body {
+                padding: 1rem;
+            }
+
+            .output-table {
+                display: grid; /* Switch from grid to block layout */
+            }
+
+            .output-table span {
+                display: block; /* Make each part of the table a new line */
+            }
+
+            /* Style for the description text in the stacked table view */
+            .output-table span:nth-child(2n) {
+                padding-left: 1rem; /* Indent the description */
+                margin-bottom: 0.75rem; /* Add space between entries */
+                opacity: 0.8;
+            }
+
+            .header-title {
+                font-size: 0.7rem;
+                margin-left: 0.5rem;
+            }
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 700px) {
             body {
                 padding: 1rem;
             }
