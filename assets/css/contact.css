@@ -186,3 +186,114 @@
 .social-btn i {
     font-size: 1.25rem;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form h2 {
+        font-size: 1.25rem;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-card p,
+    .contact-card a {
+        font-size: 0.9rem;
+    }
+
+    .social-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .social-btn i {
+        font-size: 1rem;
+    }
+
+    .accordion-button {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .accordion-body {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-form {
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .contact-form h2 {
+        font-size: 1.1rem;
+    }
+
+    .contact-form .form-control,
+    .contact-form .form-select {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .form-label {
+        font-size: 0.85rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .contact-card i {
+        font-size: 1.75rem;
+    }
+
+    .contact-card h3 {
+        font-size: 1rem;
+    }
+
+    .contact-card p,
+    .contact-card a {
+        font-size: 0.8rem;
+    }
+
+    .social-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .social-connect {
+        gap: 0.5rem;
+    }
+
+    .accordion-button {
+        font-size: 0.85rem;
+        padding: 0.85rem;
+    }
+
+    .accordion-body {
+        padding: 0.85rem;
+        font-size: 0.8rem;
+    }
+}

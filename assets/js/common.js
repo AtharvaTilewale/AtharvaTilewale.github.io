@@ -99,3 +99,31 @@ document.addEventListener('DOMContentLoaded', function() {
         el.textContent = currentYear;
     });
 });
+
+// Close hamburger menu when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    if (navbarCollapse && navbarToggler) {
+        document.addEventListener('click', function(e) {
+            const isNavbarOpen = navbarCollapse.classList.contains('show');
+            const clickedInsideNavbar = navbarCollapse.contains(e.target);
+            const clickedToggler = navbarToggler.contains(e.target);
+            
+            if (isNavbarOpen && !clickedInsideNavbar && !clickedToggler) {
+                navbarToggler.click();
+            }
+        });
+        
+        // Also close menu when a nav link is clicked
+        const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    }
+});

@@ -356,4 +356,207 @@ body {
     .section {
         padding: 3.5rem 1rem;
     }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .cta-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .card-custom {
+        padding: 1.5rem;
+    }
+
+    .btn-custom {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .section {
+        padding: 2.5rem 0.75rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .page-header {
+        padding: 5rem 1rem 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar-custom .nav-link {
+        font-size: 0.9rem;
+        margin: 0 0.25rem;
+    }
+
+    .theme-toggle {
+        padding: 0.4rem 0.6rem;
+        margin-left: 0.5rem;
+    }
+
+    .cta-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .cta-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .cta-section p {
+        font-size: 0.9rem;
+    }
+
+    .card-custom {
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .btn-custom {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .site-footer {
+        padding: 2rem 1rem;
+    }
+
+    .site-footer .social-links a {
+        font-size: 1.25rem;
+        margin: 0 0.5rem;
+    }
+
+    .profile-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .profile-badge i {
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Devices (350px minimum) */
+@media (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .section {
+        padding: 2rem 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+    }
+
+    .page-header {
+        padding: 4.5rem 0.75rem 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-custom {
+        padding: 0.75rem 0;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .navbar-custom .nav-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .theme-toggle {
+        padding: 0.35rem 0.5rem;
+    }
+
+    .theme-toggle i {
+        font-size: 0.8rem;
+    }
+
+    .cta-section {
+        padding: 1.25rem 0.75rem;
+        border-radius: 10px;
+    }
+
+    .cta-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .btn-custom {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .card-custom {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .tag {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.65rem;
+    }
+
+    .site-footer {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .site-footer .social-links a {
+        font-size: 1.1rem;
+        margin: 0 0.4rem;
+    }
+
+    .site-footer .text-muted-custom {
+        font-size: 0.8rem;
+    }
+
+    .form-control-custom {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.9rem;
+    }
 }
