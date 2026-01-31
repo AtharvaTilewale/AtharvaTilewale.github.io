@@ -162,10 +162,54 @@
 
         .navbar-toggler {
             border-color: var(--border-color);
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+            border-color: var(--primary-color);
         }
 
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28208, 210, 214, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            width: 1.25em;
+            height: 1.25em;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--navbar-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                margin-top: 1rem;
+                padding: 1rem;
+                box-shadow: 0 10px 30px var(--shadow-color);
+            }
+
+            .navbar-nav {
+                gap: 0.25rem;
+            }
+
+            .navbar-custom .nav-link {
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                margin: 0;
+            }
+
+            .navbar-custom .nav-link:hover,
+            .navbar-custom .nav-link.active {
+                background-color: rgba(0, 245, 195, 0.1);
+            }
+
+            .theme-toggle {
+                margin: 0.75rem 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         .section {
