@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs -->
+    <title>FELBuilder | PCA + Free Energy Landscape Analysis Pipeline by Atharva Tilewale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FELBuilder - An automated Python tool for Principal Component Analysis (PCA) and Free Energy Landscape (FEL) analysis from Molecular Dynamics trajectories. Single-command execution to publication-quality plots.">
+    <meta name="keywords" content="felbuilder, free energy landscape, PCA analysis, molecular dynamics, GROMACS, MD trajectory analysis, bioinformatics tools, computational biology, atharva tilewale">
+    <meta name="author" content="Atharva Tilewale">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="FELBuilder | PCA + Free Energy Landscape Analysis Pipeline">
+    <meta property="og:description" content="Automated Python tool for PCA and FEL analysis from MD trajectories with single-command execution.">
+    <meta property="og:url" content="https://atharvatilewale.github.io/softwares/felbuilder">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FELBuilder | PCA + Free Energy Landscape Analysis Pipeline">
+    <meta name="twitter:description" content="Automated Python tool for PCA and FEL analysis from MD trajectories with single-command execution.">
+    <meta name="twitter:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV74V9XH8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CV74V9XH8P');
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://atharvatilewale.github.io/softwares/felbuilder">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    
+    <style>
+        .tool-hero {
+            padding: 8rem 1rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(26, 34, 56, 0.9) 0%, var(--dark-bg) 100%);
+        }
+
+        [data-theme="light"] .tool-hero {
+            background: linear-gradient(180deg, rgba(229, 231, 235, 0.9) 0%, var(--dark-bg) 100%);
+        }
+
+        .tool-hero h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--heading-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tool-hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .tool-hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin: 0.25rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .feature-card .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card .icon i {
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+        }
+
+        .feature-card h3 {
+            color: var(--heading-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--card-text-color);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .info-box {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p, .info-box li {
+            color: var(--text-color);
+        }
+
+        .code-block {
+            background-color: #1a1a2e;
+            border-radius: 8px;
+            padding: 1rem 1.5rem 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+            width: 100%;
+        }
+
+        [data-theme="light"] .code-block {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+        }
+
+        .code-block-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.75rem;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: none;
+            color: #6a737d;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary-color);
+            background-color: rgba(0, 245, 195, 0.1);
+        }
+
+        .copy-btn.copied {
+            color: var(--primary-color);
+        }
+
+        .code-block code {
+            color: #00f5c3;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        [data-theme="light"] .code-block code {
+            color: #0d9488;
+        }
+
+        .code-block .comment {
+            color: #6a737d;
+        }
+
+        [data-theme="light"] .code-block .comment {
+            color: #94a3b8;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: var(--light-bg);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content .code-block {
+            max-width: 600px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--dark-bg);
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-color);
+            margin: 0;
+        }
+    </style>
+
+    <script src="../assets/js/common.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">&lt;AT/&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../softwares.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Hero -->
+    <header class="tool-hero">
+        <div class="container">
+            <h1>FEL<span class="highlight">Builder</span></h1>
+            <p class="tagline">An automated Python tool for Principal Component Analysis (PCA) and Free Energy Landscape (FEL) analysis from Molecular Dynamics trajectories. From raw simulation files to publication-quality plots with a single command.</p>
+            <div class="tech-badges mb-4">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">GROMACS</span>
+                <span class="tech-badge">Matplotlib</span>
+                <span class="tech-badge">PCA</span>
+                <span class="tech-badge">FEL</span>
+            </div>
+            <a href="https://github.com/AtharvaTilewale/FELBuilder" class="btn-custom btn-filled btn-large me-2" target="_blank">
+                <i class="fab fa-github me-2"></i>View on GitHub
+            </a>
+            <a href="../softwares.html" class="btn-custom btn-large">
+                <i class="fas fa-arrow-left me-2"></i>Back to Tools
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">About FELBuilder</h2>
+                <p class="section-subtitle text-center">Streamlining MD trajectory analysis for researchers</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle me-2"></i>What is FELBuilder?</h4>
+                            <p>FELBuilder is an automated Python tool designed to simplify and streamline <strong>Principal Component Analysis (PCA)</strong> and <strong>Free Energy Landscape (FEL)</strong> analysis from Molecular Dynamics (MD) trajectories.</p>
+                            <p class="mb-0">It wraps GROMACS analysis commands into a single, user-friendly command-line interface (<code>felbuilder</code>), taking you from raw simulation files to publication-quality 2D and 3D FEL plots with a single command.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title text-center">Key Features</h2>
+                <p class="section-subtitle text-center">Everything you need for efficient FEL analysis</p>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h3>Single-Command Execution</h3>
+                            <p>Runs the complete PCA–FEL workflow with one command. No need to manually chain multiple GROMACS tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Automated Indexing</h3>
+                            <p>Automatically generates a GROMACS index file for Protein + Ligand using the <code>-g</code> flag.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h3>Organized Output</h3>
+                            <p>Consolidates all generated files into a single <code>FEL_output</code> directory for easy access.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Publication-Quality Plots</h3>
+                            <p>Produces high-quality 2D contour and 3D surface plots using Matplotlib, ready for your papers.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h3>Smart Plot-Only Mode</h3>
+                            <p>Optionally skips analysis steps to plot directly from a <code>.dat</code> file when analysis is already done.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>User-Friendly Interface</h3>
+                            <p>Colorful CLI, detailed help menu, and robust error handling for GROMACS operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Quick Start</h2>
+                <p class="section-subtitle text-center">Get started with FELBuilder in minutes</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Install FELBuilder</h4>
+                                <p>Clone the repository and install dependencies</p>
+                                <div class="code-block">
+                                    <div class="code-block-header">
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <code>git clone https://github.com/AtharvaTilewale/FELBuilder.git
+cd FELBuilder
+pip install -r requirements.txt</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Run Analysis</h4>
+                                <p>Execute FELBuilder with your MD trajectory files</p>
+                                <div class="code-block">
+                                    <div class="code-block-header">
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <code><span class="comment"># Basic usage</span>
+felbuilder -s topology.tpr -f trajectory.xtc
+
+<span class="comment"># With Protein + Ligand index generation</span>
+felbuilder -s topology.tpr -f trajectory.xtc -g</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Get Your Plots</h4>
+                                <p>Find publication-ready 2D and 3D FEL plots in the <code>FEL_output</code> directory</p>
+                                <div class="code-block">
+                                    <div class="code-block-header">
+                                        <button class="copy-btn" onclick="copyCode(this)">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <code>FEL_output/
+├── fel_2d_contour.png
+├── fel_3d_surface.png
+├── eigenval.xvg
+├── proj.xvg
+└── ...</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Output Examples -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title text-center">Output Types</h2>
+                <p class="section-subtitle text-center">High-quality visualizations for your research</p>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="feature-card text-center">
+                            <div class="icon mx-auto">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <h3>2D Contour Plot</h3>
+                            <p>Free energy landscape projected onto PC1 and PC2 with energy contours showing conformational states and transition barriers.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-6">
+                        <div class="feature-card text-center">
+                            <div class="icon mx-auto">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h3>3D Surface Plot</h3>
+                            <p>Interactive 3D representation of the free energy surface for better visualization of energy minima and landscape topology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="section-title">Ready to analyze your MD trajectories?</h2>
+                <p class="section-subtitle mb-4">Get started with FELBuilder today</p>
+                <a href="https://github.com/AtharvaTilewale/FELBuilder" class="btn-custom btn-filled btn-large me-2" target="_blank">
+                    <i class="fab fa-github me-2"></i>Get FELBuilder
+                </a>
+                <a href="../contact.html" class="btn-custom btn-large">
+                    <i class="fas fa-envelope me-2"></i>Contact for Support
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://github.com/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Atharva-Tilewale-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a>
+                <a href="https://orcid.org/0009-0003-9802-8158" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
+            </div>
+            <p class="text-muted-custom">&copy; 2026 Atharva Tilewale. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block');
+            const code = codeBlock.querySelector('code');
+            const text = code.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+    </script>
+</body>
+</html>

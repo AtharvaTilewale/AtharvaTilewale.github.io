@@ -1,0 +1,186 @@
+/* ========================================
+   Blog Page Specific Styles
+   ======================================== */
+
+/* Blog Card */
+.blog-card {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 245, 195, 0.1);
+}
+
+.blog-card .blog-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--border-color) 0%, var(--light-bg) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-card .blog-image i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.blog-card .blog-content {
+    padding: 1.5rem;
+}
+
+.blog-card .blog-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--card-text-color);
+}
+
+.blog-card .blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.blog-card .blog-category {
+    background-color: var(--dark-bg);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.blog-card h3 {
+    color: var(--heading-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card p {
+    color: var(--card-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card .read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: gap 0.3s ease;
+}
+
+.blog-card .read-more:hover {
+    gap: 0.5rem;
+}
+
+/* Coming Soon State */
+.coming-soon {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--light-bg);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+}
+
+.coming-soon i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+}
+
+.coming-soon h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.coming-soon p {
+    color: var(--card-text-color);
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Category Tags */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.category-tag {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-tag:hover,
+.category-tag.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Newsletter */
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form .input-group {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 0.25rem;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--card-text-color);
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    opacity: 0.9;
+}

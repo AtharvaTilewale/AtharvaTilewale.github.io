@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs -->
+    <title>UniDock GUI | GPU-Accelerated Molecular Docking Interface by Atharva Tilewale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="UniDock GUI - A user-friendly graphical interface for Uni-Dock, enabling GPU-accelerated molecular docking with up to 2000x speedup for high-throughput virtual screening.">
+    <meta name="keywords" content="unidock gui, molecular docking, gpu docking, virtual screening, drug discovery, computational chemistry, autodock vina, vinardo, ad4, bioinformatics tools, atharva tilewale">
+    <meta name="author" content="Atharva Tilewale">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="UniDock GUI | GPU-Accelerated Molecular Docking Interface">
+    <meta property="og:description" content="A user-friendly graphical interface for Uni-Dock enabling GPU-accelerated molecular docking with up to 2000x speedup.">
+    <meta property="og:url" content="https://atharvatilewale.github.io/softwares/unidock_gui">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UniDock GUI | GPU-Accelerated Molecular Docking Interface">
+    <meta name="twitter:description" content="A user-friendly graphical interface for Uni-Dock enabling GPU-accelerated molecular docking with up to 2000x speedup.">
+    <meta name="twitter:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV74V9XH8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CV74V9XH8P');
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://atharvatilewale.github.io/softwares/unidock_gui">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    
+    <style>
+        .tool-hero {
+            padding: 8rem 1rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(26, 34, 56, 0.9) 0%, var(--dark-bg) 100%);
+        }
+
+        [data-theme="light"] .tool-hero {
+            background: linear-gradient(180deg, rgba(229, 231, 235, 0.9) 0%, var(--dark-bg) 100%);
+        }
+
+        .tool-hero h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--heading-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tool-hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .tool-hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin: 0.25rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .feature-card .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card .icon i {
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+        }
+
+        .feature-card h3 {
+            color: var(--heading-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--card-text-color);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .info-box {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p, .info-box li {
+            color: var(--text-color);
+        }
+
+        .code-block {
+            background-color: #1a1a2e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            color: var(--primary-color);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: var(--light-bg);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <script src="../assets/js/common.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">&lt;AT/&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../softwares.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Hero -->
+    <header class="tool-hero">
+        <div class="container">
+            <h1>UniDock <span class="highlight">GUI</span></h1>
+            <p class="tagline">A user-friendly graphical interface for Uni-Dock, enabling GPU-accelerated molecular docking with up to 2000x speedup for high-throughput virtual screening.</p>
+            <div class="tech-badges mb-4">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Uni-Dock</span>
+                <span class="tech-badge">GPU-Accelerated</span>
+                <span class="tech-badge">CUDA</span>
+                <span class="tech-badge">Vina/Vinardo/AD4</span>
+            </div>
+            <a href="https://github.com/vedasoham/GUI_unidock" class="btn-custom btn-filled btn-large me-2" target="_blank">
+                <i class="fab fa-github me-2"></i>View on GitHub
+            </a>
+            <a href="../softwares.html" class="btn-custom btn-large">
+                <i class="fas fa-arrow-left me-2"></i>Back to Tools
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">About UniDock GUI</h2>
+                <p class="section-subtitle text-center">Simplifying GPU-accelerated molecular docking for researchers</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle me-2"></i>What is Uni-Dock?</h4>
+                            <p>Uni-Dock is a high-performance molecular docking program that leverages the power of GPUs to accelerate the docking process by up to <strong>2000 times</strong> compared to traditional CPU-based methods. It supports popular scoring functions like <strong>vina</strong>, <strong>vinardo</strong>, and <strong>ad4</strong>.</p>
+                            <p class="mb-0">Uni-Dock is part of the <strong>DeepModeling community</strong> and is designed for high-throughput virtual screening and molecular docking simulations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title text-center">Key Features</h2>
+                <p class="section-subtitle text-center">Everything you need for efficient molecular docking</p>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>Easy-to-use Interface</h3>
+                            <p>Simplifies the process of setting up and running docking simulations with Uni-Dock through an intuitive graphical interface.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                            <h3>Input File Management</h3>
+                            <p>Easily load and manage receptor and ligand files with support for common molecular file formats.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Interactive Configuration</h3>
+                            <p>Set up docking parameters including search space, scoring function (vina, vinardo, ad4), and other advanced options.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Job Monitoring</h3>
+                            <p>Monitor the progress of your docking jobs in real-time with detailed status updates and progress indicators.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>GPU Acceleration</h3>
+                            <p>Leverage NVIDIA GPU computing power for up to 2000x faster docking compared to traditional CPU-based methods.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Results Analysis</h3>
+                            <p>View and analyze docking results with binding poses and affinity scores for informed decision making.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring Functions -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Supported Scoring Functions</h2>
+                <p class="section-subtitle text-center">Choose the right scoring function for your research</p>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card text-center">
+                            <h3><i class="fas fa-calculator me-2 text-primary"></i>Vina</h3>
+                            <p>The classic AutoDock Vina scoring function, widely used and validated for molecular docking studies.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card text-center">
+                            <h3><i class="fas fa-calculator me-2 text-primary"></i>Vinardo</h3>
+                            <p>An improved scoring function with better accuracy for certain protein-ligand interactions.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card text-center">
+                            <h3><i class="fas fa-calculator me-2 text-primary"></i>AD4</h3>
+                            <p>AutoDock 4 scoring function for compatibility with legacy workflows and specific use cases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="section-title">Ready to accelerate your docking?</h2>
+                <p class="section-subtitle mb-4">Get started with UniDock GUI today</p>
+                <a href="https://github.com/vedasoham/GUI_unidock" class="btn-custom btn-filled btn-large me-2" target="_blank">
+                    <i class="fab fa-github me-2"></i>Get UniDock GUI
+                </a>
+                <a href="../contact.html" class="btn-custom btn-large">
+                    <i class="fas fa-envelope me-2"></i>Contact for Support
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://github.com/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Atharva-Tilewale-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a>
+                <a href="https://orcid.org/0009-0003-9802-8158" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
+            </div>
+            <p class="text-muted-custom">&copy; 2026 Atharva Tilewale. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

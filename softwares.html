@@ -2,57 +2,337 @@
 <html lang="en">
 
 <head>
-    <!-- Basic Page Needs -->
-    <title>Softwares | Atharva Tilewale</title>
+    <title>Tools & Software | Atharva Tilewale - Bioinformatics Tools</title>
+    <link rel="icon" type="image/png" href="https://atharvatilewale.github.io/images/logo/logo.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Softwares by Atharva Tilewale">
-    <meta name="keywords" content="atharva tilewale, bioinformatics, bioinformatics tools, bioinformatics software, computational biology, genomics">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore bioinformatics tools and software developed by Atharva Tilewale for genomics, molecular dynamics, and computational biology research.">
+    <meta name="keywords" content="atharva tilewale, bioinformatics tools, bioinformatics software, computational biology, genomics, genome inspector, gravity, boltz2">
     <meta name="author" content="Atharva Tilewale">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://atharvatilewale.github.io/softwares.html" />
+
+    <meta property="og:title" content="Tools & Software | Atharva Tilewale">
+    <meta property="og:description" content="Open-source bioinformatics tools for genomics and computational biology research.">
+    <meta property="og:url" content="https://atharvatilewale.github.io/softwares.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV74V9XH8P"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-CV74V9XH8P');
     </script>
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet">
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet  -->
-    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="plugins/magnific-popup/magnific-popup.min.css">
-    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css/">
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <!-- Page Specific Styles -->
+    <link rel="stylesheet" href="assets/css/tools.css">
 </head>
 
 <body>
 
-    <!-- Main Wrapper -->
-    <div id="main-wrapper">
-        <!-- Content -->
-        <div id="content" role="main">
-            <!-- Intro -->
-            <section id="home">
-                <div class="utf-hero-wrap ">
-                    <div id="particles-js" class="bg-dark-2">
-                        <div class="utf-hero-content section d-flex">
-                            <a style = "margin-left: 20px; color: blue;" href="/softwares/genome_inspector.html">Genome Inspector</a>
-                            <a style = "margin-left: 20px; color: blue;" href="/boltz2-notebook/">Boltz2 Notebook</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">&lt;AT/&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="softwares.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Tools & <span class="highlight">Software</span></h1>
+            <p class="section-subtitle mb-0">Open-source bioinformatics tools for research and discovery</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- Featured Tool -->
+                <div class="featured-tool">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="featured-visual">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="featured-content">
+                                <span class="featured-badge"><i class="fas fa-star me-1"></i> Featured</span>
+                                <h2>GRAVITy - GROMACS Automation Pipeline</h2>
+                                <p>A comprehensive automated pipeline for molecular dynamics simulations using GROMACS. 
+                                Streamlines the entire MD workflow from system setup to trajectory analysis with an 
+                                integrated GUI and 3D molecular visualization.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Flask</span>
+                                    <span class="tech-tag">Shell</span>
+                                    <span class="tech-tag">Perl</span>
+                                    <span class="tech-tag">GROMACS</span>
+                                </div>
+                                <a href="https://github.com/AtharvaTilewale/GRAVITy" class="btn-custom btn-filled me-2" target="_blank">
+                                    <i class="fab fa-github me-1"></i> View on GitHub
+                                </a>
+                                <a href="research.html" class="btn-custom">Learn More</a>
+                            </div>
                         </div>
                     </div>
-            </section>
+                </div>
+
+                <!-- Tools Grid -->
+                <div class="row g-4">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge stable">Stable</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Boltz2-Notebook</h3>
+                            <p class="tool-desc">A streamlined Colab-based pipeline for protein structure prediction 
+                            and binding affinity analysis using the Boltz2 deep learning model with an interactive UI.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Jupyter</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="https://atharvatilewale.github.io/boltz2-notebook/" class="btn-tool primary" target="_blank">
+                                    <i class="fas fa-rocket"></i> Launch
+                                </a>
+                                <a href="https://github.com/AtharvaTilewale/boltz2-notebook" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge stable">Stable</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Genome Inspector Web</h3>
+                            <p class="tool-desc">An interactive web-based DNA sequence analysis tool for transcription, 
+                            translation, reverse complement, GC content analysis, melting temperature calculation, and more.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="https://atharvatilewale.github.io/Genome_Inspector_Web/" class="btn-tool primary" target="_blank">
+                                    <i class="fas fa-rocket"></i> Launch
+                                </a>
+                                <a href="https://github.com/AtharvaTilewale/Genome_Inspector_Web" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge stable">Stable</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>Genome Inspector Desktop</h3>
+                            <p class="tool-desc">A BioPython-based GUI desktop application for comprehensive DNA sequence 
+                            analysis. Available for Windows and Linux with full feature set including ORF finding.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">BioPython</span>
+                                <span class="tech-tag">Tkinter</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="softwares/genome_inspector.html" class="btn-tool primary">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                                <a href="https://github.com/AtharvaTilewale/Genome_Inspector" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge dev">In Dev</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3>GRAVITy Pipeline</h3>
+                            <p class="tool-desc">Automated GROMACS pipeline for MD simulations. Features system setup, 
+                            protein rectification, parameterization, production runs, and trajectory analysis.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Shell</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="https://github.com/AtharvaTilewale/GRAVITy" class="btn-tool primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge stable">Stable</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h3>UniDock GUI</h3>
+                            <p class="tool-desc">A user-friendly graphical interface for Uni-Dock, a GPU-accelerated molecular 
+                            docking program. Simplifies high-throughput virtual screening with up to 2000x speedup.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Uni-Dock</span>
+                                <span class="tech-tag">GPU</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="softwares/unidock_gui.html" class="btn-tool primary">
+                                    <i class="fas fa-info-circle"></i> Learn More
+                                </a>
+                                <a href="https://github.com/vedasoham/GUI_unidock" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card">
+                            <span class="status-badge stable">Stable</span>
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h3>FELBuilder</h3>
+                            <p class="tool-desc">Automated PCA + Free Energy Landscape analysis pipeline for MD trajectories. 
+                            Single-command execution from raw simulations to publication-quality 2D/3D FEL plots.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">GROMACS</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                            <div class="tool-actions">
+                                <a href="softwares/felbuilder.html" class="btn-tool primary">
+                                    <i class="fas fa-info-circle"></i> Learn More
+                                </a>
+                                <a href="https://github.com/AtharvaTilewale/FELBuilder" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tool-card" style="border-style: dashed; opacity: 0.7;">
+                            <div class="tool-icon" style="background: var(--border-color);">
+                                <i class="fas fa-plus" style="color: var(--text-color);"></i>
+                            </div>
+                            <h3>More Coming Soon</h3>
+                            <p class="tool-desc">New bioinformatics tools and pipelines are constantly in development. 
+                            Check back regularly or follow me on GitHub for updates!</p>
+                            <div class="tool-actions">
+                                <a href="https://github.com/AtharvaTilewale" class="btn-tool" target="_blank">
+                                    <i class="fab fa-github"></i> Follow on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation Section -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title text-center">How to Cite</h2>
+                <p class="section-subtitle text-center">If you use any of these tools in your research, please cite appropriately</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div style="background-color: var(--dark-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-color);">
+                            <p style="margin-bottom: 0.5rem; color: var(--primary-color);"># Example citation format:</p>
+                            <p style="margin: 0;">Tilewale, A. (2026). [Tool Name]. GitHub repository. https://github.com/AtharvaTilewale/[repo]</p>
+                        </div>
+                        <p class="text-center mt-3" style="color: var(--card-text-color); font-size: 0.9rem;">
+                            For specific citation information, please check individual tool documentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-section">
+                    <h3><i class="fas fa-code-branch me-2" style="color: var(--primary-color);"></i>Contribute or Request Features</h3>
+                    <p>All tools are open-source and contributions are welcome! Found a bug or have a feature request? 
+                    Open an issue on GitHub or reach out directly.</p>
+                    <a href="https://github.com/AtharvaTilewale" class="btn-custom btn-filled me-2" target="_blank">
+                        <i class="fab fa-github me-1"></i> GitHub Profile
+                    </a>
+                    <a href="contact.html" class="btn-custom">Contact Me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://github.com/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Atharva-Tilewale-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a>
+                <a href="https://orcid.org/0009-0003-9802-8158" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
+            </div>
+            <p class="text-muted-custom">&copy; <span class="current-year">2026</span> Atharva Tilewale. All Rights Reserved.</p>
         </div>
-        <!-- Intro end -->
-    </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/common.js"></script>
 </body>
-        <!-- Services end -->
+</html>

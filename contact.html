@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact | Atharva Tilewale - Get In Touch</title>
+    <link rel="icon" type="image/png" href="https://atharvatilewale.github.io/images/logo/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with Atharva Tilewale for research collaborations, project inquiries, or any questions about bioinformatics and computational biology.">
+    <meta name="keywords"
+        content="atharva tilewale, contact, collaboration, bioinformatics, computational biology, research">
+    <meta name="author" content="Atharva Tilewale">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://atharvatilewale.github.io/contact.html" />
+
+    <meta property="og:title" content="Contact | Atharva Tilewale">
+    <meta property="og:description" content="Reach out for research collaborations and project inquiries.">
+    <meta property="og:url" content="https://atharvatilewale.github.io/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://atharvatilewale.github.io/images/logo/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CV74V9XH8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CV74V9XH8P');
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #00f5c3;
+            --primary-hover: #00c9a0;
+            --dark-bg: #121828;
+            --light-bg: #1a2238;
+            --card-bg: #1a2238;
+            --text-color: #d0d2d6;
+            --card-text-color: #babfca;
+            --heading-color: #ffffff;
+            --border-color: #2a3457;
+            --navbar-bg: rgba(18, 24, 40, 0.95);
+            --shadow-color: rgba(0, 245, 195, 0.1);
+            --font-mono: 'Source Code Pro', monospace;
+            --font-logo: 'Orbitron', sans-serif;
+            --font-sans: 'Poppins', sans-serif;
+            --error-color: #ff6b6b;
+            --success-color: #00f5c3;
+        }
+
+        /* Light Theme */
+        [data-theme="light"] {
+            --primary-color: #00c9a0;
+            --primary-hover: #00a080;
+            --dark-bg: #f5f7fa;
+            --light-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-color: #4a5568;
+            --card-text-color: #718096;
+            --heading-color: #1a202c;
+            --border-color: #e2e8f0;
+            --navbar-bg: rgba(255, 255, 255, 0.95);
+            --shadow-color: transparent;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .theme-toggle i {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle .fa-moon {
+            color: var(--text-color);
+        }
+        
+        .theme-toggle .fa-sun {
+            color: transparent;
+        }
+        
+        [data-theme="light"] .theme-toggle .fa-moon {
+            color: transparent;
+        }
+        
+        [data-theme="light"] .theme-toggle .fa-sun {
+            color: #f6ad55;
+        }
+
+        /* Navigation */
+        .navbar-custom {
+            background-color: var(--navbar-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-family: var(--font-logo);
+            font-weight: 900;
+            font-size: 1.4rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #00e0b0 50%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .navbar-brand:hover {
+            background: linear-gradient(135deg, #00d4ff 0%, var(--primary-color) 50%, #00e0b0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(0, 245, 195, 0.5));
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .navbar-toggler {
+            border-color: var(--border-color);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28208, 210, 214, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .section {
+            padding: 5rem 1rem;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 6rem 1rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(26, 34, 56, 0.8) 0%, var(--dark-bg) 100%);
+        }
+
+        [data-theme="light"] .page-header {
+            background: linear-gradient(180deg, rgba(229, 231, 235, 0.8) 0%, var(--dark-bg) 100%);
+        }
+
+        .page-header h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--heading-color);
+            font-weight: 700;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        /* Contact Cards */
+        .contact-card {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-card .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), #00c9a0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-card .icon i {
+            font-size: 1.75rem;
+            color: var(--dark-bg);
+        }
+
+        .contact-card h3 {
+            color: var(--heading-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--card-text-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.8;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            color: var(--heading-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-control {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background-color: var(--dark-bg);
+            border-color: var(--primary-color);
+            color: var(--text-color);
+            box-shadow: 0 0 0 3px rgba(0, 245, 195, 0.1);
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: var(--card-text-color);
+            opacity: 0.7;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-select {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2300f5c3' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        }
+
+        .form-select:focus {
+            background-color: var(--dark-bg);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 245, 195, 0.1);
+            outline: none;
+        }
+
+        .form-select option {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border: 2px solid var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Form Status Messages */
+        .form-status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .form-status.success {
+            background-color: rgba(0, 245, 195, 0.1);
+            border: 1px solid var(--success-color);
+            color: var(--success-color);
+        }
+
+        .form-status.error {
+            background-color: rgba(255, 107, 107, 0.1);
+            border: 1px solid var(--error-color);
+            color: var(--error-color);
+        }
+
+        /* Social Links */
+        .social-connect {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .social-btn i {
+            font-size: 1.25rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--heading-color);
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(0, 245, 195, 0.05);
+        }
+
+        .faq-question i {
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--card-text-color);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.25rem 1.25rem;
+            max-height: 500px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .site-footer .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .site-footer .text-muted-custom {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3.5rem 1rem;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+        }
+
+        ::selection {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">&lt;AT/&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="softwares.html">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Get In <span class="highlight">Touch</span></h1>
+            <p class="section-subtitle mb-0">Let's collaborate and build something amazing together</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Options -->
+        <section class="section" style="padding-bottom: 2rem;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-card">
+                            <div class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>Best for detailed inquiries</p>
+                            <a href="mailto:tilewale.atharva@gmail.com">tilewale.atharva@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-card">
+                            <div class="icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h3>LinkedIn</h3>
+                            <p>Professional networking</p>
+                            <a href="https://linkedin.com/in/atharvatilewale" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-card">
+                            <div class="icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Code collaboration & issues</p>
+                            <a href="https://github.com/AtharvaTilewale" target="_blank" rel="noopener noreferrer">View GitHub Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="contact-form-container">
+                            <h2 class="section-title text-center mb-4">Send a Message</h2>
+                            
+                            <form id="contact-form" action="https://formspree.io/f/xayrzjdk" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="name">Full Name *</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="email">Email Address *</label>
+                                            <input type="email" class="form-control" id="email" name="_replyto" placeholder="your.email@example.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="affiliation">Affiliation/Organization</label>
+                                            <input type="text" class="form-control" id="affiliation" name="affiliation" placeholder="University, Company, etc.">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" for="subject">Subject *</label>
+                                            <select class="form-select" id="subject" name="subject" required>
+                                                <option value="" disabled selected>Select a topic</option>
+                                                <option value="Research Collaboration">Research Collaboration</option>
+                                                <option value="Tool/Software Inquiry">Tool/Software Inquiry</option>
+                                                <option value="Bug Report">Bug Report</option>
+                                                <option value="Feature Request">Feature Request</option>
+                                                <option value="General Question">General Question</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="message">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Tell me about your inquiry, project idea, or question..." required></textarea>
+                                </div>
+
+                                <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
+
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+
+                                <div class="form-status success" id="success-message">
+                                    <i class="fas fa-check-circle me-2"></i>Thank you! Your message has been sent successfully. I'll get back to you soon.
+                                </div>
+
+                                <div class="form-status error" id="error-message">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Oops! Something went wrong. Please try again or email me directly.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Connect -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title text-center">Connect on Other Platforms</h2>
+                <p class="section-subtitle text-center">Find me across the web</p>
+                
+                <div class="social-connect">
+                    <a href="https://github.com/AtharvaTilewale" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/atharvatilewale" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Atharva-Tilewale-2" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-researchgate"></i> ResearchGate
+                    </a>
+                    <a href="https://orcid.org/0009-0003-9802-8158" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-orcid"></i> ORCID
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=In4tfIoAAAAJ&hl" class="social-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <p class="section-subtitle text-center">Quick answers to common inquiries</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                Are you open to research collaborations?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! I'm always interested in collaborating on bioinformatics and computational biology projects. Whether it's tool development, data analysis, or novel research, feel free to reach out with your ideas.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                Can I use your tools for my research?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! All my tools are open-source and free to use. Please check the individual repository licenses for specific terms. If you use them in your research, a citation would be appreciated.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                How long does it take to respond to messages?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>I typically respond to emails and messages within 24-48 hours. For urgent matters, LinkedIn messages might get a faster response.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                Do you offer consulting services?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>I'm open to discussing consulting opportunities for bioinformatics projects, tool development, or computational biology analyses. Please reach out with details about your project for discussion.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                How can I report bugs or request features?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The best way is to open an issue on the respective GitHub repository. Alternatively, you can use the contact form above with "Bug Report" or "Feature Request" as the subject.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://github.com/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/atharvatilewale" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Atharva-Tilewale-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i></a>
+                <a href="https://orcid.org/0009-0003-9802-8158" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a>
+            </div>
+            <p class="text-muted-custom">&copy; 2026 Atharva Tilewale. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Form submission handling
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.btn-submit');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+            }
+        });
+
+        // Theme Toggle
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        // Initialize theme immediately
+        initTheme();
+        
+        // Add click handler for theme toggle
+        document.querySelector('.theme-toggle')?.addEventListener('click', toggleTheme);
+    </script>
+</body>
+</html>

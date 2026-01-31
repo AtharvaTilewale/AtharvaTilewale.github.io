@@ -1,0 +1,175 @@
+/* ========================================
+   Home/Index Page Specific Styles
+   ======================================== */
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 .highlight {
+    color: var(--primary-color);
+}
+
+.hero-content .tagline {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.hero-content .typed-cursor {
+    color: var(--primary-color);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* About Preview */
+.about-preview {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+}
+
+.about-preview h2 {
+    color: var(--heading-color);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-preview p {
+    color: var(--card-text-color);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Quick Links */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-link-card {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quick-link-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.quick-link-card .icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), #00c9a0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.quick-link-card .icon i {
+    font-size: 1.25rem;
+    color: var(--dark-bg);
+}
+
+.quick-link-card .content h4 {
+    color: var(--heading-color);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.quick-link-card .content p {
+    color: var(--card-text-color);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Social Links in Hero */
+.hero-social {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero-social a {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.hero-social a:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}

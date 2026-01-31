@@ -1,0 +1,260 @@
+/* ========================================
+   Research Page Specific Styles
+   ======================================== */
+
+/* Research Theme Card */
+.research-card,
+.research-theme {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card::before,
+.research-theme::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--primary-hover));
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.research-card:hover,
+.research-theme:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.research-card:hover::before,
+.research-theme:hover::before {
+    transform: scaleY(1);
+}
+
+.research-card .icon,
+.research-theme .theme-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.research-card .icon i,
+.research-theme .theme-icon i {
+    font-size: 1.75rem;
+    color: var(--dark-bg);
+}
+
+.research-card h3,
+.research-theme h3 {
+    color: var(--heading-color);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.research-card p,
+.research-theme p {
+    color: var(--card-text-color);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Theme Keywords */
+.theme-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.theme-keyword {
+    background-color: var(--dark-bg);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+}
+
+/* Project Card */
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 25px var(--shadow-color);
+}
+
+.project-card .project-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.project-status.ongoing,
+.project-status.active {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.project-status.completed {
+    background-color: #58a6ff;
+    color: var(--dark-bg);
+}
+
+.project-status.planned,
+.project-status.planning {
+    background-color: #ffc107;
+    color: var(--dark-bg);
+}
+
+.project-card h3,
+.project-card h4 {
+    color: var(--heading-color);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-right: 100px;
+}
+
+.project-card p {
+    color: var(--card-text-color);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.85rem;
+}
+
+.project-meta-item i {
+    color: var(--primary-color);
+}
+
+/* Methodology Steps */
+.methodology-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.methodology-step .step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--dark-bg);
+}
+
+.methodology-step h4,
+.methodology-step h5 {
+    color: var(--heading-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.methodology-step p,
+.step-content p {
+    color: var(--card-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.step-content h4 {
+    color: var(--heading-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Collaboration CTA */
+.collab-cta {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--shadow-color) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.collab-cta h3 {
+    color: var(--heading-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.collab-cta p {
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Section Alt Background */
+.section-alt {
+    background-color: var(--card-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-card h3,
+    .project-card h4 {
+        padding-right: 0;
+        margin-top: 2.5rem;
+    }
+    
+    .methodology-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

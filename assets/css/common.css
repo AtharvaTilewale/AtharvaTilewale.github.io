@@ -1,0 +1,359 @@
+/* ========================================
+   Common Styles - Atharva Tilewale Portfolio
+   ======================================== */
+
+/* Google Fonts Import - Orbitron for Logo (Futuristic/Sci-Fi) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+
+/* CSS Variables - Dark Theme (Default) */
+:root {
+    --primary-color: #00f5c3;
+    --primary-hover: #00d4a8;
+    --dark-bg: #121828;
+    --light-bg: #1a2238;
+    --card-bg: #1a2238;
+    --text-color: #d0d2d6;
+    --card-text-color: #babfca;
+    --heading-color: #ffffff;
+    --border-color: #2a3457;
+    --error-color: #ff6b6b;
+    --success-color: #00f5c3;
+    --font-mono: 'Source Code Pro', monospace;
+    --font-logo: 'Orbitron', sans-serif;
+    --font-sans: 'Poppins', sans-serif;
+    --navbar-bg: rgba(18, 24, 40, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color: #00c9a0;
+    --primary-hover: #00a883;
+    --dark-bg: #f5f7fa;
+    --light-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #4a5568;
+    --card-text-color: #718096;
+    --heading-color: #1a202c;
+    --border-color: #e2e8f0;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --shadow-color: transparent;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary-color);
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle .fa-moon {
+    color: var(--text-color);
+}
+
+.theme-toggle .fa-sun {
+    color: transparent;
+}
+
+[data-theme="light"] .theme-toggle .fa-moon {
+    color: transparent;
+}
+
+[data-theme="light"] .theme-toggle .fa-sun {
+    color: #f6ad55;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+/* Navigation */
+.navbar-custom {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-brand {
+    font-family: var(--font-logo);
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #00e0b0 50%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-custom .navbar-brand:hover {
+    background: linear-gradient(135deg, #00d4ff 0%, var(--primary-color) 50%, #00e0b0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(0, 245, 195, 0.5));
+}
+
+.navbar-custom .nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-toggler {
+    border-color: var(--border-color);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28208, 210, 214, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Sections */
+.section {
+    padding: 5rem 1rem;
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* Page Header */
+.page-header {
+    padding: 6rem 1rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(26, 34, 56, 0.8) 0%, var(--dark-bg) 100%);
+}
+
+[data-theme="light"] .page-header {
+    background: linear-gradient(180deg, rgba(229, 231, 235, 0.8) 0%, var(--dark-bg) 100%);
+}
+
+.page-header h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+.page-header h1 .highlight {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.btn-custom.btn-filled {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.btn-custom.btn-filled:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Cards */
+.card-custom {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 245, 195, 0.1);
+}
+
+/* Tags */
+.tag {
+    background-color: var(--dark-bg);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--light-bg) 0%, rgba(0, 245, 195, 0.05) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.cta-section h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: var(--card-text-color);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--light-bg);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.site-footer .social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.site-footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+.site-footer .text-muted-custom {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Form Elements */
+.form-control-custom {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 245, 195, 0.1);
+}
+
+.form-control-custom::placeholder {
+    color: var(--card-text-color);
+}
+
+/* Status Messages */
+.form-status {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: none;
+}
+
+.form-status.success {
+    background-color: rgba(0, 245, 195, 0.1);
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.form-status.error {
+    background-color: rgba(255, 107, 107, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+}
+
+/* Profile Badges */
+.profile-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.profile-badge:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.profile-badge i {
+    font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: 3.5rem 1rem;
+    }
+}

@@ -1,0 +1,334 @@
+/* ========================================
+   Publications Page Specific Styles
+   ======================================== */
+
+/* Stats Section */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.stat-item .number {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+.stat-item .label {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-tab {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border-color: var(--primary-color);
+}
+
+/* Publication Card */
+.publication-card {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.publication-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 245, 195, 0.1);
+}
+
+.publication-card .pub-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+}
+
+.pub-type.journal {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.pub-type.preprint {
+    background-color: #58a6ff;
+    color: var(--dark-bg);
+}
+
+.pub-type.conference {
+    background-color: #ffc107;
+    color: var(--dark-bg);
+}
+
+.pub-type.thesis {
+    background-color: #a855f7;
+    color: white;
+}
+
+.publication-card .pub-year {
+    font-family: var(--font-mono);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.publication-card h3 {
+    color: var(--heading-color);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-right: 80px;
+}
+
+.publication-card .authors {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-card .authors .highlight-author {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.publication-card .venue {
+    color: var(--card-text-color);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.publication-card .abstract {
+    color: var(--card-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.publication-card .abstract.show {
+    display: block;
+}
+
+.publication-card .pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pub-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pub-btn.primary {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border-color: var(--primary-color);
+}
+
+.pub-btn.primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Citation Modal */
+.citation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.citation-modal.show {
+    display: flex;
+}
+
+.citation-content {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.citation-content h4 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.citation-content .close-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.citation-content .close-btn:hover {
+    color: var(--primary-color);
+}
+
+.citation-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.citation-tab {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.citation-tab.active {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border-color: var(--primary-color);
+}
+
+.citation-text {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.copy-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Profiles Section */
+.profiles-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--light-bg);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .publication-card h3 {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+
+    .publication-card .pub-type {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        margin-bottom: 0.75rem;
+    }
+}

@@ -1,0 +1,188 @@
+/* ========================================
+   Contact Page Specific Styles
+   ======================================== */
+
+/* Contact Cards */
+.contact-card {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.contact-card .icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), #00c9a0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contact-card .icon i {
+    font-size: 1.75rem;
+    color: var(--dark-bg);
+}
+
+.contact-card h3 {
+    color: var(--heading-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    color: var(--card-text-color);
+    margin-bottom: 0;
+}
+
+.contact-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card a:hover {
+    opacity: 0.8;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+}
+
+.contact-form h2 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 245, 195, 0.1);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.contact-form .form-control::placeholder {
+    color: var(--card-text-color);
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form .form-select option {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 3rem;
+}
+
+.faq-section h3 {
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.accordion-item {
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: var(--light-bg);
+    color: var(--heading-color);
+    font-weight: 500;
+    padding: 1rem 1.25rem;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-body {
+    background-color: var(--dark-bg);
+    color: var(--card-text-color);
+    padding: 1.25rem;
+}
+
+/* Social Connect */
+.social-connect {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-btn i {
+    font-size: 1.25rem;
+}
