@@ -184,9 +184,8 @@ body {
     }
 
     .theme-toggle {
-        margin: 0.75rem 0 0 0;
-        width: 100%;
-        justify-content: center;
+        margin: 0.5rem 0 0 0.8rem;
+        padding: 0.1rem 0.3rem;
     }
 }
 
@@ -510,10 +509,6 @@ body {
 
 /* Extra Small Devices (350px minimum) */
 @media (max-width: 400px) {
-    html {
-        font-size: 14px;
-    }
-
     .container {
         padding-left: 10px;
         padding-right: 10px;
