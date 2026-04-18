@@ -2,17 +2,66 @@
    Research Page Specific Styles
    ======================================== */
 
+/* Grid Improvements */
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2rem;
+}
+
+@media (min-width: 1200px) {
+    .row {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2.5rem;
+    }
+}
+
+/* Stagger Animation for Cards */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.research-theme,
+.project-card {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.research-theme:nth-child(1) { animation-delay: 0.1s; }
+.research-theme:nth-child(2) { animation-delay: 0.2s; }
+.research-theme:nth-child(3) { animation-delay: 0.3s; }
+.research-theme:nth-child(4) { animation-delay: 0.4s; }
+.research-theme:nth-child(5) { animation-delay: 0.5s; }
+.research-theme:nth-child(6) { animation-delay: 0.6s; }
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(7) { animation-delay: 0.7s; }
+.project-card:nth-child(8) { animation-delay: 0.8s; }
+
 /* Research Theme Card */
 .research-card,
 .research-theme {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 2.5rem;
     height: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .research-card::before,
@@ -25,14 +74,14 @@
     height: 100%;
     background: linear-gradient(180deg, var(--primary-color), var(--primary-hover));
     transform: scaleY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .research-card:hover,
 .research-theme:hover {
     border-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 245, 195, 0.15);
 }
 
 .research-card:hover::before,
@@ -42,28 +91,35 @@
 
 .research-card .icon,
 .research-theme .theme-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+}
+
+.research-card:hover .icon,
+.research-theme:hover .theme-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .research-card .icon i,
 .research-theme .theme-icon i {
-    font-size: 1.75rem;
+    font-size: 2rem;
     color: var(--dark-bg);
 }
 
 .research-card h3,
 .research-theme h3 {
     color: var(--heading-color);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 .research-card p,
@@ -71,52 +127,93 @@
     color: var(--card-text-color);
     font-size: 0.95rem;
     margin-bottom: 0;
+    line-height: 1.8;
+    flex-grow: 1;
 }
 
 /* Theme Keywords */
 .theme-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .theme-keyword {
     background-color: var(--dark-bg);
     color: var(--primary-color);
-    padding: 0.25rem 0.75rem;
+    padding: 0.4rem 0.85rem;
     border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-family: var(--font-mono);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.theme-keyword:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
 }
 
 /* Project Card */
 .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 2.5rem;
     height: 100%;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 0 25px var(--shadow-color);
+    box-shadow: 0 12px 40px rgba(0, 245, 195, 0.15);
+    transform: translateY(-6px);
 }
 
+/* Project Status Badge */
 .project-card .project-status {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     display: inline-block;
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 1rem;
     border-radius: 50px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     font-family: var(--font-mono);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .project-status {
+    transform: scale(1.05);
 }
 
 .project-status.ongoing,
@@ -139,33 +236,37 @@
 .project-card h3,
 .project-card h4 {
     color: var(--heading-color);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
     padding-right: 100px;
+    line-height: 1.4;
 }
 
 .project-card p {
     color: var(--card-text-color);
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    flex-grow: 1;
 }
 
 .project-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
 }
 
 .project-meta-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     color: var(--text-color);
     font-size: 0.85rem;
+    transition: all 0.3s ease;
 }
 
 .project-meta-item i {
@@ -176,16 +277,26 @@
 .methodology-step {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
     text-align: left;
-    padding: 1.5rem;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.methodology-step:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 245, 195, 0.1);
+    transform: translateX(8px);
 }
 
 .methodology-step .step-number {
     flex-shrink: 0;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
     border-radius: 50%;
     display: flex;
@@ -193,50 +304,144 @@
     justify-content: center;
     font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--dark-bg);
+    transition: all 0.3s ease;
+}
+
+.methodology-step:hover .step-number {
+    transform: scale(1.1);
 }
 
 .methodology-step h4,
 .methodology-step h5 {
     color: var(--heading-color);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
 .methodology-step p,
 .step-content p {
     color: var(--card-text-color);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 0;
+    line-height: 1.7;
 }
 
 .step-content h4 {
     color: var(--heading-color);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
 /* Collaboration CTA */
 .collab-cta {
     background: linear-gradient(135deg, var(--card-bg) 0%, var(--shadow-color) 100%);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 3rem;
+    border-radius: 16px;
+    padding: 3.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.collab-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary-color), transparent);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.collab-cta:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px rgba(0, 245, 195, 0.1);
 }
 
 .collab-cta h3 {
     color: var(--heading-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
 }
 
 .collab-cta p {
     color: var(--text-color);
     max-width: 600px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Typography & Readability Enhancements */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.research-theme p,
+.project-card p {
+    letter-spacing: 0.3px;
+}
+
+/* Better text selection */
+.research-theme::selection,
+.project-card::selection,
+.research-theme *::selection,
+.project-card *::selection {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+/* Better list styling inside cards */
+.research-theme ul,
+.project-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.research-theme li,
+.project-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+.btn-custom {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-custom:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-custom.btn-filled:hover {
+    box-shadow: 0 8px 20px rgba(0, 245, 195, 0.3);
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
 }
 
 /* Section Alt Background */
@@ -244,33 +449,145 @@
     background-color: var(--card-bg);
 }
 
+/* Improved Spacing for sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.section .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    margin-bottom: 3.5rem !important;
+    line-height: 1.6;
+}
+
+/* Page Header Enhancement */
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 245, 195, 0.1), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 245, 195, 0.08), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.page-header h1 .highlight {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .research-theme,
+    .research-card {
+        padding: 2rem;
+    }
+
+    .research-theme h3,
+    .research-card h3 {
+        font-size: 1.1rem;
+    }
+
     .project-card h3,
     .project-card h4 {
         padding-right: 0;
         margin-top: 2.5rem;
+        font-size: 1.1rem;
     }
     
     .methodology-step {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 1.25rem;
     }
 
     .collab-cta {
-        padding: 2rem;
+        padding: 2.5rem;
+    }
+
+    .collab-cta h3 {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 3.5rem 0;
+    }
+
+    .section .section-title {
+        font-size: 1.75rem;
     }
 }
 
 @media (max-width: 576px) {
+    .research-theme,
+    .research-card,
     .project-card {
-        padding: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .research-theme h3,
+    .research-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .research-card .icon,
+    .research-theme .theme-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.5rem;
+    }
+
+    .research-card .icon i,
+    .research-theme .theme-icon i {
+        font-size: 1.5rem;
     }
 
     .project-card h3,
     .project-card h4 {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         margin-top: 2rem;
     }
 
@@ -279,7 +596,7 @@
     }
 
     .project-card .project-status {
-        padding: 0.25rem 0.6rem;
+        padding: 0.3rem 0.7rem;
         font-size: 0.65rem;
     }
 
@@ -297,10 +614,54 @@
         font-size: 1rem;
     }
 
-    .methodology-step h4 {
+    .collab-cta {
+        padding: 2rem;
+    }
+
+    .collab-cta h3 {
+        font-size: 1.1rem;
+    }
+
+    .collab-cta p {
+        font-size: 0.85rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section .section-title {
+        font-size: 1.4rem;
+    }
+
+    .section .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .theme-keywords {
+        gap: 0.5rem;
+    }
+
+    .theme-keyword {
+        padding: 0.3rem 0.65rem;
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 424px) {
+    .collab-cta {
+        padding: 1.5rem;
+    }
+
+    .collab-cta h3 {
         font-size: 1rem;
     }
 
+    .section .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 2rem !important;
+    }
+}
     .methodology-step p {
         font-size: 0.85rem;
     }
@@ -316,7 +677,6 @@
     .collab-cta p {
         font-size: 0.85rem;
     }
-}
 
 @media (max-width: 400px) {
     .project-card {
