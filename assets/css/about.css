@@ -210,6 +210,14 @@
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-content h3 i {
+    color: var(--primary-color);
+    font-size: 1rem;
 }
 
 .timeline-content .institution {
@@ -227,6 +235,66 @@
 
 .timeline-content p:last-child {
     margin-top: 0.5rem;
+}
+
+.timeline-list {
+    color: var(--card-text-color);
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+.timeline-list li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.exp-tag {
+    display: inline-block;
+    background: rgba(0, 245, 195, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 245, 195, 0.3);
+    transition: all 0.3s ease;
+}
+
+.exp-tag:hover {
+    background: rgba(0, 245, 195, 0.2);
+    border-color: var(--primary-color);
+}
+
+.skills-text {
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(0, 245, 195, 0.05);
+    /* border-left: 3px solid var(--primary-color); */
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.skills-simple {
+    color: var(--card-text-color);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.skills-label {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 /* Timeline Responsive - Stack on mobile */
@@ -753,12 +821,26 @@
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .award-content:hover {
     border-color: var(--primary-color);
     box-shadow: 0 8px 25px rgba(0, 245, 195, 0.15);
     transform: translateX(8px);
+}
+
+.award-date {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.5rem;
+    /* background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); */
+    /* color: var(--dark-bg); */
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .award-badge {
@@ -787,7 +869,7 @@
     color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
 }
 
 .award-org strong {
@@ -798,6 +880,7 @@
     color: var(--card-text-color);
     font-size: 0.95rem;
     line-height: 1.7;
+    margin-top: 1.3rem;
     margin-bottom: 1.5rem;
 }
 
