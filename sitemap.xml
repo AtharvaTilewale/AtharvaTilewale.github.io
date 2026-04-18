@@ -8,7 +8,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://atharvatilewale.github.io/</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +16,7 @@
   <!-- About Page -->
   <url>
     <loc>https://atharvatilewale.github.io/about.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -24,7 +24,7 @@
   <!-- Research Page -->
   <url>
     <loc>https://atharvatilewale.github.io/research.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -32,7 +32,7 @@
   <!-- Publications Page -->
   <url>
     <loc>https://atharvatilewale.github.io/publications.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -40,7 +40,7 @@
   <!-- Tools/Softwares Page -->
   <url>
     <loc>https://atharvatilewale.github.io/softwares.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -48,7 +48,7 @@
   <!-- Blog Page -->
   <url>
     <loc>https://atharvatilewale.github.io/blog.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,7 +56,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://atharvatilewale.github.io/contact.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -64,7 +64,7 @@
   <!-- Links Page -->
   <url>
     <loc>https://atharvatilewale.github.io/links/</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -72,21 +72,21 @@
   <!-- Tool Pages -->
   <url>
     <loc>https://atharvatilewale.github.io/softwares/genome_inspector.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://atharvatilewale.github.io/softwares/unidock_gui.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://atharvatilewale.github.io/softwares/felbuilder.html</loc>
-    <lastmod>2026-02-01T12:00:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -94,7 +94,7 @@
   <!-- External Projects -->
   <url>
     <loc>https://atharvatilewale.github.io/boltz2-notebook/</loc>
-    <lastmod>2026-01-16T23:30:00+05:30</lastmod>
+    <lastmod>2026-04-18T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
