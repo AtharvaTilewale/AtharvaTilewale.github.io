@@ -70,6 +70,25 @@
   </url>
 
   <!-- Tool Pages -->
+    <url>
+    <loc>https://atharvatilewale.github.io/meowmd/index.html</loc>
+    <lastmod>2026-08-07T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://atharvatilewale.github.io/meowmd/mdviewer.html</loc>
+    <lastmod>2026-08-07T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://atharvatilewale.github.io/meowmd/mdeditor.html</loc>
+    <lastmod>2026-08-07T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://atharvatilewale.github.io/softwares/genome_inspector.html</loc>
     <lastmod>2026-04-18T12:00:00+05:30</lastmod>
