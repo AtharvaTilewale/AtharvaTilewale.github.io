@@ -9,6 +9,7 @@ Disallow: /private/
 
 # Sitemap location (important for faster indexing)
 Sitemap: https://atharvatilewale.github.io/sitemap.xml
+Sitemap: https://atharvatilewale.github.io/sitemap02.xml
 
 # Crawl-delay (optional: set if you want to reduce server load)
 # Crawl-delay: 10
